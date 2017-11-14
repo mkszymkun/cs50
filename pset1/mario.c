@@ -22,7 +22,6 @@ int main(void)
         hash(hs);
         printf("  ");
         hash(hs);
-        space(s);
         printf("\n");
         s--;
         hs++;
