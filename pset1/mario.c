@@ -1,45 +1,41 @@
-#include <cs50.h>
 #include <stdio.h>
-
-void space(int s);
-void hash(int hs);
+#include <cs50.h>
 
 int main(void)
 {
-    int h;
+    int n;
     do
     {
-    printf("Height: ");
-    h = get_int();
+        printf("Height: ");
+        n = get_int();
     }
-    while (h < 0 || h > 23);
+    while (n < 0 || n > 23);
 
-    int s = h - 1;
-    int hs = 1;
-    for (int i = 1; i <= h; i++)
+    for (int i = 0; i < n; i++)
     {
-        space(s);
-        hash(hs);
+        int h = 0;
+        int s = 0;
+        int k = n - i - 1;
+
+        while(s < k)
+        {
+            printf(" ");
+            s++;
+        }
+
+        while(h < i + 1)
+        {
+            printf("#");
+            h++;
+        }
+
         printf("  ");
-        hash(hs);
+        h = 0;
+        while(h < i + 1)
+        {
+            printf("#");
+            h++;
+        }
         printf("\n");
-        s--;
-        hs++;
-    }
-}
-
-void space(int s)
-{
-    for (int i = 0; i < s; i++)
-    {
-        printf(" ");
-    }
-}
-
-void hash(int hs)
-{
-    for (int i = 1; i <= hs; i++)
-    {
-        printf("#");
     }
 }
