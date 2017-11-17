@@ -4,7 +4,7 @@
 int main(void)
 {
     printf("Minutes: ");
-    int lenght = get_int();
-    int x = lenght * 12;
-    printf("Bottles: %i\n", x);
+    int m = get_int();
+    int b = m * 12;
+    printf("Bottles: %i\n", b);
 }
