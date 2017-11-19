@@ -1,100 +1,130 @@
-#include <cs50.h>
 #include <stdio.h>
+#include <cs50.h>
 #include <math.h>
+
+long long int ten_to_power(int x);
 
 int main(void)
 {
     printf("Number: ");
     long long int cc = get_long_long();
-    long long d12 = pow(10, 12);
-    long long d13s = 999999999999;
-    long long d13 = pow(10, 13);
-    long long d14 = pow(10, 14);
-    long long d15s = 99999999999999;
-    long long d15 = pow(10, 15);
-    long long d16s = 999999999999999;
-    long long d16 = pow(10, 16);
     int dgts = 0;
+    int sum1 = 0;
+    int sum2 = 0;
+    int sum = 0;
 
-    if (cc < d16 && cc > d16s)
-    {
-        dgts = 16;
-    }
-    else if (cc < d15 && cc > d15s)
-    {
-        dgts = 15;
-    }
-    else if (cc < d13 && cc > d13s)
+
+    if (cc < ten_to_power(13) && cc > ten_to_power(12) - 1)
     {
         dgts = 13;
     }
 
+    else if (cc < ten_to_power(15) && cc > ten_to_power(14) - 1)
+    {
+        dgts = 15;
+    }
 
-    if (dgts !=13 && dgts != 15 && dgts != 16)
+    else if (cc < ten_to_power(116) && cc > ten_to_power(15) - 1)
+    {
+        dgts = 16;
+    }
+
+    if (dgts != 13 && dgts != 15 && dgts != 16)
     {
         printf("INVALID\n");
     }
+
     else
     {
-        long long int c0 = 0;
-        int sum = 0;
-        int sum2 = 0;
-        for (int i = 2; i <= dgts; i = i + 2)
+        for(int i = 1; i <= dgts; i = i + 2)
         {
-            long long int x = pow(10, i);
-            long long int y = pow(10, i - 1);
-            long long int c = (cc % x - c0) / y;
-            int d = 2 * c;
-            if (d < 10)
+            long long int high = ten_to_power(i + 1);
+            long long int low = ten_to_power(i);
+
+            int digit = (cc % high - cc % low) / low;
+            int doub = 2 * digit;
+            if (doub > 9)
             {
-                sum2 = sum2 + d;
+                sum1 = sum1 + 1 + doub % 10;
             }
             else
             {
-                sum2 = sum2 +1 + d % 10;
+                sum1 = sum1 + doub;
             }
-            c0 = c;
         }
-        c0 = 0;
-        for (int i = 1; i <= dgts; i = i + 2)
-        {
-            long long int x = pow(10, i);
-            long long int y = pow(10, i - 1);
-            long long int c = (cc % x - c0) / y;
-            sum = sum + c;
-            c0 = c;
-        }
-        int sumt = sum + sum2;
 
-        if (sumt % 10 != 0)
+        for(int i = 0; i <= dgts; i = i + 2)
+        {
+            long long int high = ten_to_power(i + 1);
+            long long int low = ten_to_power(i);
+
+            int digit = (cc % high - cc % low) / low;
+            sum2 = sum2 + digit;
+        }
+
+        sum = sum1 + sum2;
+
+        if (sum % 10 != 0)
         {
             printf("INVALID\n");
         }
+
         else
         {
+            if (dgts == 13)
+            {
+                long long int low13 = ten_to_power(12);
+                int dgt1 = (cc - cc % low13) / low13;
+                if (dgt1 == 4)
+                {
+                    printf("VISA\n");
 
+                }
+            }
 
-            if (dgts == 15 && ((cc - (cc % d13)) / d13  == 34 || (cc - (cc % d13)) / d13 == 37))
+            else if (dgts == 15)
             {
-                printf("AMEX\n");
+                long long int low15 = ten_to_power(14);
+                long long int low14 = ten_to_power(13);
+                int dgt1 = (cc - cc % low15) / low15;
+                int dgt2 = (cc % low15 - cc % low14) / low14;
+                if (dgt1 == 3 && (dgt2 == 4 || dgt2 == 7))
+                {
+                    printf("AMEX\n");
+
+                }
             }
-            else if (dgts == 16 && ((cc - (cc % d14)) / d14  == 51 || (cc - (cc % d14)) / d14 == 52 || (cc - (cc % d14)) / d14 == 53 || (cc - (cc % d14)) / d14 == 54 || (cc - (cc % d14)) / d14 == 55))
+
+            else if (dgts == 16)
             {
-                printf("MASTERCARD\n");
+                long long int low16 = ten_to_power(15);
+                long long int low15 = ten_to_power(14);
+                int dgt1 = (cc - cc % low16) / low16;
+                int dgt2 = (cc % low16 - cc % low15) / low15;
+                if (dgt1 == 5 && (dgt2 == 1 || dgt2 == 2 || dgt2 == 3 || dgt2 == 4 || dgt2 == 5))
+                {
+                    printf("MASTERCARD\n");
+
+                }
+                else if (dgt1 == 4)
+                {
+                    printf("VISA\n");
+                }
             }
-            else if (dgts == 13 && ((cc - (cc % d12)) / d12  == 4))
-            {
-                printf("VISA\n");
-            }
-            else if (dgts == 16 && ((cc - (cc % d15)) / d15  == 4))
-            {
-                printf("VISA\n");
-            }
+
             else
             {
                 printf("INVALID\n");
             }
         }
+
     }
+
 }
 
+
+long long int ten_to_power(int x)
+{
+    long long int y = pow(10, x);
+    return y;
+}
