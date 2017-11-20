@@ -9,415 +9,141 @@ int main(int argc, string argv[])
 {
     if (argc != 2)
     {
-        printf("EROR\n");
+        printf("ERROR\n");
         return 1;
     }
 
-    else
+    string hpw = argv[1];
+
+    for (int i = 65; i < 123; i++)
     {
-    // 1
-        for (int i = 0; i < 26; i++)
+        if (i == 91)
         {
-            int u = i + 65;
-            char array1[2] = { u, '\0' };
-            string a = crypt(array1, "50");
-            int stra = (int) strcmp(argv[1], a);
-            if (stra == 0)
-            {
-                printf("%s\n", array1);
-                return 0;
-            }
-
-            // 2
-            for (int j = 0; j < 26; j++)
-            {
-                int u1 = j + 65;
-                char array2[3] = { u, u1, '\0' };
-                string b = crypt(array2, "50");
-                int strb = (int) strcmp(argv[1], b);
-                if (strb == 0)
-                {
-                    printf("%s\n", array2);
-                    return 0;
-                }
-
-                //3
-                for (int k = 0; k < 26; k++)
-                {
-                    int u2 = k + 65;
-                    char array3[4] = { u, u1, u2, '\0' };
-                    string c = crypt(array3, "50");
-                    int strc = (int) strcmp(argv[1], c);
-                    if (strc == 0)
-                    {
-                        printf("%s\n", array3);
-                        return 0;
-                    }
-
-                    //4
-                    for (int o = 0; o < 26; o++)
-                    {
-                        int u3 = o + 65;
-                        char array4[5] = { u, u1, u2, u3, '\0' };
-                        string d = crypt(array4, "50");
-                        int strd = (int) strcmp(argv[1], d);
-                        if (strd == 0)
-                        {
-                            printf("%s\n", array4);
-                            return 0;
-                        }
-                    }
-                    // 4
-                    for (int o = 0; o < 26; o++)
-                    {
-                        int l3 = o + 97;
-                        char array4[5] = { u, u1, u2, l3, '\0' };
-                        string d = crypt(array4, "50");
-                        int strd = (int) strcmp(argv[1], d);
-                        if (strd == 0)
-                        {
-                            printf("%s\n", array4);
-                            return 0;
-                        }
-                    }
-                }
-
-                // 3
-                for (int k = 0; k < 26; k++)
-                {
-                    int l2 = k + 97;
-                    char array3[4] = { u, u1, l2, '\0' };
-                    string c = crypt(array3, "50");
-                    int strc = (int) strcmp(argv[1], c);
-                    if (strc == 0)
-                    {
-                        printf("%s\n", array3);
-                        return 0;
-                    }
-
-                    //4
-                    for (int o = 0; o < 26; o++)
-                    {
-                        int u3 = o + 65;
-                        char array4[5] = { u, u1, l2, u3, '\0' };
-                        string d = crypt(array4, "50");
-                        int strd = (int) strcmp(argv[1], d);
-                        if (strd == 0)
-                        {
-                            printf("%s\n", array4);
-                            return 0;
-                        }
-                    }
-                    // 4
-                    for (int o = 0; o < 26; o++)
-                    {
-                        int l3 = o + 97;
-                        char array4[5] = { u, u1, l2, l3, '\0' };
-                        string d = crypt(array4, "50");
-                        int strd = (int) strcmp(argv[1], d);
-                        if (strd == 0)
-                        {
-                            printf("%s\n", array4);
-                            return 0;
-                        }
-                    }
-                }
-            }
-            // 2
-            for (int j = 0; j < 26; j++)
-            {
-                int l1 = j + 97;
-                char array2[3] = { u, l1, '\0' };
-                string b = crypt(array2, "50");
-                int strb = (int) strcmp(argv[1], b);
-                if (strb == 0)
-                {
-                    printf("%s\n", array2);
-                    return 0;
-                }
-                //3
-                for (int k = 0; k < 26; k++)
-                {
-                    int u2 = k + 65;
-                    char array3[4] = { u, l1, u2, '\0' };
-                    string c = crypt(array3, "50");
-                    int strc = (int) strcmp(argv[1], c);
-                    if (strc == 0)
-                    {
-                        printf("%s\n", array3);
-                        return 0;
-                    }
-
-                    //4
-                    for (int o = 0; o < 26; o++)
-                    {
-                        int u3 = o + 65;
-                        char array4[5] = { u, l1, u2, u3, '\0' };
-                        string d = crypt(array4, "50");
-                        int strd = (int) strcmp(argv[1], d);
-                        if (strd == 0)
-                        {
-                            printf("%s\n", array4);
-                            return 0;
-                        }
-                    }
-                    // 4
-                    for (int o = 0; o < 26; o++)
-                    {
-                        int l3 = o + 97;
-                        char array4[5] = { u, l1, u2, l3, '\0' };
-                        string d = crypt(array4, "50");
-                        int strd = (int) strcmp(argv[1], d);
-                        if (strd == 0)
-                        {
-                            printf("%s\n", array4);
-                            return 0;
-                        }
-                    }
-                }
-                //3
-                for (int k = 0; k < 26; k++)
-                {
-                    int l2 = k + 97;
-                    char array3[4] = { u, l1, l2, '\0' };
-                    string c = crypt(array3, "50");
-                    int strc = (int) strcmp(argv[1], c);
-                    if (strc == 0)
-                    {
-                        printf("%s\n", array3);
-                        return 0;
-                    }
-
-                    //4
-                    for (int o = 0; o < 26; o++)
-                    {
-                        int u3 = o + 65;
-                        char array4[5] = { u, l1, l2, u3, '\0' };
-                        string d = crypt(array4, "50");
-                        int strd = (int) strcmp(argv[1], d);
-                        if (strd == 0)
-                        {
-                            printf("%s\n", array4);
-                            return 0;
-                        }
-                    }
-                    // 4
-                    for (int o = 0; o < 26; o++)
-                    {
-                        int l3 = o + 97;
-                        char array4[5] = { u, l1, l2, l3, '\0' };
-                        string d = crypt(array4, "50");
-                        int strd = (int) strcmp(argv[1], d);
-                        if (strd == 0)
-                        {
-                            printf("%s\n", array4);
-                            return 0;
-                        }
-                    }
-                }
-            }
+            i = 97;
         }
-        // 1
-        for (int i = 0; i < 26; i++)
+
+
+        for (int j = 65; j < 123; j++)
         {
-            int l = i + 97;
-            char array1[2] = { l, '\0' };
-            string a = crypt(array1, "50");
-            int stra = (int) strcmp(argv[1], a);
-            if (stra == 0)
+
+            if (j == 91)
             {
-                printf("%s\n", array1);
-                return 0;
+                j = 97;
             }
 
-            // 2
-            for (int j = 0; j < 26; j++)
+
+            for (int k = 65; k < 123; k++)
+
             {
-                int u1 = j + 65;
-                char array2[3] = { l, u1, '\0' };
-                string b = crypt(array2, "50");
-                int strb = (int) strcmp(argv[1], b);
-                if (strb == 0)
+
+                if (k == 91)
                 {
-                    printf("%s\n", array2);
-                    return 0;
+                    k = 97;
                 }
 
-                //3
-                for (int k = 0; k < 26; k++)
+                for (int l = 65; l < 123; l++)
                 {
-                    int u2 = k + 65;
-                    char array3[4] = { l, u1, u2, '\0' };
-                    string c = crypt(array3, "50");
-                    int strc = (int) strcmp(argv[1], c);
-                    if (strc == 0)
+                    if (l == 91)
                     {
-                        printf("%s\n", array3);
+                        l = 97;
+                    }
+                    char pw[5] = { i, j, k, l, '\0' };
+                    string nhpw4 = crypt(pw, "50");
+                    int comparison4 = (int) strcmp(hpw, nhpw4);
+                    if (comparison4 == 0)
+                    {
+                        printf("OK 4\n");
+                        printf("%s\n", pw);
                         return 0;
-                    }
-
-                    //4
-                    for (int o = 0; o < 26; o++)
-                    {
-                        int u3 = o + 65;
-                        char array4[5] = { l, u1, u2, u3, '\0' };
-                        string d = crypt(array4, "50");
-                        int strd = (int) strcmp(argv[1], d);
-                        if (strd == 0)
-                        {
-                            printf("%s\n", array4);
-                            return 0;
-                        }
-                    }
-                    // 4
-                    for (int o = 0; o < 26; o++)
-                    {
-                        int l3 = o + 97;
-                        char array4[5] = { l, u1, u2, l3, '\0' };
-                        string d = crypt(array4, "50");
-                        int strd = (int) strcmp(argv[1], d);
-                        if (strd == 0)
-                        {
-                            printf("%s\n", array4);
-                            return 0;
-                        }
-                    }
-                }
-
-                // 3
-                for (int k = 0; k < 26; k++)
-                {
-                    int l2 = k + 97;
-                    char array3[4] = { l, u1, l2, '\0' };
-                    string c = crypt(array3, "50");
-                    int strc = (int) strcmp(argv[1], c);
-                    if (strc == 0)
-                    {
-                        printf("%s\n", array3);
-                        return 0;
-                    }
-
-                    //4
-                    for (int o = 0; o < 26; o++)
-                    {
-                        int u3 = o + 65;
-                        char array4[5] = { l, u1, l2, u3, '\0' };
-                        string d = crypt(array4, "50");
-                        int strd = (int) strcmp(argv[1], d);
-                        if (strd == 0)
-                        {
-                            printf("%s\n", array4);
-                            return 0;
-                        }
-                    }
-                    // 4
-                    for (int o = 0; o < 26; o++)
-                    {
-                        int l3 = o + 97;
-                        char array4[5] = { l, u1, l2, l3, '\0' };
-                        string d = crypt(array4, "50");
-                        int strd = (int) strcmp(argv[1], d);
-                        if (strd == 0)
-                        {
-                            printf("%s\n", array4);
-                            return 0;
-                        }
-                    }
-                }
-            }
-            // 2
-            for (int j = 0; j < 26; j++)
-            {
-                int l1 = j + 97;
-                char array2[3] = { l, l1, '\0' };
-                string b = crypt(array2, "50");
-                int strb = (int) strcmp(argv[1], b);
-                if (strb == 0)
-                {
-                    printf("%s\n", array2);
-                    return 0;
-                }
-                //3
-                for (int k = 0; k < 26; k++)
-                {
-                    int u2 = k + 65;
-                    char array3[4] = { l, l1, u2, '\0' };
-                    string c = crypt(array3, "50");
-                    int strc = (int) strcmp(argv[1], c);
-                    if (strc == 0)
-                    {
-                        printf("%s\n", array3);
-                        return 0;
-                    }
-
-                    //4
-                    for (int o = 0; o < 26; o++)
-                    {
-                        int u3 = o + 65;
-                        char array4[5] = { l, l1, u2, u3, '\0' };
-                        string d = crypt(array4, "50");
-                        int strd = (int) strcmp(argv[1], d);
-                        if (strd == 0)
-                        {
-                            printf("%s\n", array4);
-                            return 0;
-                        }
-                    }
-                    // 4
-                    for (int o = 0; o < 26; o++)
-                    {
-                        int l3 = o + 97;
-                        char array4[5] = { l, l1, u2, l3, '\0' };
-                        string d = crypt(array4, "50");
-                        int strd = (int) strcmp(argv[1], d);
-                        if (strd == 0)
-                        {
-                            printf("%s\n", array4);
-                            return 0;
-                        }
-                    }
-                }
-                //3
-                for (int k = 0; k < 26; k++)
-                {
-                    int l2 = k + 97;
-                    char array3[4] = { l, l1, l2, '\0' };
-                    string c = crypt(array3, "50");
-                    int strc = (int) strcmp(argv[1], c);
-                    if (strc == 0)
-                    {
-                        printf("%s\n", array3);
-                        return 0;
-                    }
-
-                    //4
-                    for (int o = 0; o < 26; o++)
-                    {
-                        int u3 = o + 65;
-                        char array4[5] = { l, l1, l2, u3, '\0' };
-                        string d = crypt(array4, "50");
-                        int strd = (int) strcmp(argv[1], d);
-                        if (strd == 0)
-                        {
-                            printf("%s\n", array4);
-                            return 0;
-                        }
-                    }
-                    // 4
-                    for (int o = 0; o < 26; o++)
-                    {
-                        int l3 = o + 97;
-                        char array4[5] = { l, l1, l2, l3, '\0' };
-                        string d = crypt(array4, "50");
-                        int strd = (int) strcmp(argv[1], d);
-                        if (strd == 0)
-                        {
-                            printf("%s\n", array4);
-                            return 0;
-                        }
                     }
                 }
             }
         }
     }
+
+    for (int i = 65; i < 123; i++)
+    {
+        if (i == 91)
+        {
+            i = 97;
+        }
+
+
+        for (int j = 65; j < 123; j++)
+        {
+
+            if (j == 91)
+            {
+                j = 97;
+            }
+
+
+            for (int k = 65; k < 123; k++)
+
+            {
+
+                if (k == 91)
+                {
+                    k = 97;
+                }
+                char pw[4] = { i, j, k, '\0' };
+                string nhpw3 = crypt(pw, "50");
+                int comparison3 = (int) strcmp(hpw, nhpw3);
+                if (comparison3 == 0)
+                {
+                    printf("OK 3\n");
+                    printf("%s\n", pw);
+                    return 0;
+                }
+            }
+        }
+    }
+    for (int i = 65; i < 123; i++)
+    {
+        if (i == 91)
+        {
+            i = 97;
+        }
+
+
+        for (int j = 65; j < 123; j++)
+        {
+
+            if (j == 91)
+            {
+                j = 97;
+            }
+
+            char pw[3] = { i, j, '\0' };
+            string nhpw2 = crypt(pw, "50");
+            int comparison2 = (int) strcmp(hpw, nhpw2);
+            if (comparison2 == 0)
+            {
+                printf("OK 2\n");
+                printf("%s\n", pw);
+                return 0;
+            }
+        }
+    }
+
+    for (int i = 65; i < 123; i++)
+    {
+        if (i == 91)
+        {
+            i = 97;
+        }
+
+        char pw[2] = { i, '\0' };
+        string nhpw1 = crypt(pw, "50");
+        int comparison1 = (int) strcmp(hpw, nhpw1);
+        if (comparison1 == 0)
+        {
+            printf("OK 1\n");
+            printf("%s\n", pw);
+            return 0;
+        }
+    }
+
+    printf("ERROR 2\n");
+    return 1;
 }
