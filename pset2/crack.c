@@ -52,7 +52,6 @@ int main(int argc, string argv[])
                     int comparison4 = (int) strcmp(hpw, nhpw4);
                     if (comparison4 == 0)
                     {
-                        printf("OK 4\n");
                         printf("%s\n", pw);
                         return 0;
                     }
@@ -91,7 +90,6 @@ int main(int argc, string argv[])
                 int comparison3 = (int) strcmp(hpw, nhpw3);
                 if (comparison3 == 0)
                 {
-                    printf("OK 3\n");
                     printf("%s\n", pw);
                     return 0;
                 }
@@ -119,7 +117,6 @@ int main(int argc, string argv[])
             int comparison2 = (int) strcmp(hpw, nhpw2);
             if (comparison2 == 0)
             {
-                printf("OK 2\n");
                 printf("%s\n", pw);
                 return 0;
             }
@@ -138,12 +135,11 @@ int main(int argc, string argv[])
         int comparison1 = (int) strcmp(hpw, nhpw1);
         if (comparison1 == 0)
         {
-            printf("OK 1\n");
             printf("%s\n", pw);
             return 0;
         }
     }
 
-    printf("ERROR 2\n");
+    printf("ERROR\n");
     return 1;
 }
